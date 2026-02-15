@@ -1,28 +1,56 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Andri</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e1e2f, #2c2c54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-<div class="card">
+/* Card lebih besar */
+.card {
+    background: white;
+    width: 350px; /* diperbesar */
+    padding: 30px; /* diperbesar */
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-    <img src="profil.png" alt="Foto Profil" class="profile-img">
+/* Foto jadi kotak kecil */
+.profile-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 15px; /* kotak agak rounded */
+    margin-bottom: 15px;
+}
 
-    <h1>Andri</h1>
-    <p class="bio">Pro Player Minecraft | Web Developer | Freelancer</p>
+/* Nama */
+h1 {
+    margin: 10px 0;
+    font-size: 26px;
+}
 
-    <div class="links">
-        <a href="https://wa.me/6285601885585" target="_blank">WhatsApp</a>
-        <a href="https://instagram.com/username" target="_blank">Instagram</a>
-        <a href="https://github.com/username" target="_blank">GitHub</a>
-        <a href="halaman2.html" class="next">Selanjutnya</a>
-    </div>
+/* Bio */
+.bio {
+    color: gray;
+    margin-bottom: 20px;
+}
 
-</div>
+/* Link tombol */
+.links a {
+    display: block;
+    text-decoration: none;
+    background: #4e73df;
+    color: white;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 10px;
+    transition: 0.3s;
+}
 
-</body>
-</html>
+.links a:hover {
+    background: #2e59d9;
+}
