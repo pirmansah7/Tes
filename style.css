@@ -1,4 +1,4 @@
-/* Reset dasar */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,80 +6,96 @@
     font-family: Arial, sans-serif;
 }
 
-/* Background gradasi */
+/* Background gelap */
 body {
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    background: #0f0f0f;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    overflow: hidden;
 }
 
-/* Container utama */
+/* Roda Gigi */
+body::before,
+body::after {
+    content: "⚙";
+    position: absolute;
+    font-size: 120px;
+    color: rgba(0, 255, 255, 0.08);
+    animation: spin 20s linear infinite;
+}
+
+/* Roda kiri atas */
+body::before {
+    top: 10%;
+    left: 10%;
+}
+
+/* Roda kanan bawah */
+body::after {
+    bottom: 10%;
+    right: 10%;
+    font-size: 160px;
+    animation: spinReverse 25s linear infinite;
+}
+
+/* Animasi berputar */
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+
+/* Container Profil */
 .container {
+    position: relative;
+    z-index: 1;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.8);
     padding: 30px;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    width: 320px;
-    animation: fadeIn 1s ease-in-out;
+    border-radius: 15px;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 25px cyan;
 }
 
-/* Animasi masuk */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Foto profil */
+/* Foto Profil */
 .profile img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
     border-radius: 50%;
-    border: 3px solid white;
-    margin-bottom: 10px;
+    border: 3px solid cyan;
+    margin-bottom: 15px;
 }
 
 /* Nama */
 .profile h1 {
     color: white;
-    margin-bottom: 5px;
 }
 
 /* Deskripsi */
 .profile p {
-    color: #ddd;
+    color: cyan;
     margin-bottom: 20px;
 }
 
-/* Link tombol */
+/* Tombol */
 .links a {
     display: block;
-    text-decoration: none;
-    background: white;
-    color: #333;
-    padding: 10px;
     margin: 10px 0;
-    border-radius: 10px;
-    transition: 0.3s;
-    font-weight: bold;
-}
-
-/* Efek hover */
-.links a:hover {
-    background: #00c6ff;
+    padding: 10px;
+    text-decoration: none;
     color: white;
-    transform: translateY(-3px);
+    background: linear-gradient(45deg, cyan, blue);
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-/* Efek klik */
-.links a:active {
-    transform: scale(0.95);
+/* Hover */
+.links a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px cyan;
 }
