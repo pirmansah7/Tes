@@ -1,93 +1,69 @@
-/* Background animasi bergerak */
+/* BODY */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(-45deg, #1e1e2f, #2c2c54, #40407a, #706fd3);
-    background-size: 400% 400%;
-    animation: gradientMove 10s ease infinite;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background: #0b0f1a;
+    overflow: hidden;
 }
 
-/* Animasi gradient */
-@keyframes gradientMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
-/* Welcome Screen */
-.welcome-screen {
+/* Background Grid Teknologi */
+.tech-background {
     position: fixed;
     width: 100%;
     height: 100%;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
-    z-index: 999;
-    transition: opacity 1s ease;
+    z-index: -1;
+
+    background:
+        linear-gradient(rgba(0,255,255,0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,255,0.08) 1px, transparent 1px);
+
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
 }
 
-.welcome-screen.hide {
-    opacity: 0;
-    pointer-events: none;
+/* Animasi Grid Bergerak */
+@keyframes gridMove {
+    from { background-position: 0 0; }
+    to { background-position: 50px 50px; }
 }
 
-/* Container diperbesar */
-.container {
-    text-align: center;
-    background: white;
-    padding: 40px;
-    border-radius: 25px;
-    width: 420px; /* diperbesar */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    animation: fadeIn 1.5s ease;
-}
-
-/* Animasi muncul */
-@keyframes fadeIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* Foto profil lebih besar */
-.profile img {
-    width: 150px;
+/* Gear Style */
+.gear {
+    position: absolute;
     border-radius: 50%;
-    margin-bottom: 10px;
-    transition: transform 0.4s ease;
+    border: 6px solid cyan;
+    box-shadow: 0 0 25px cyan;
+    opacity: 0.25;
+    animation: rotateGear linear infinite;
 }
 
-/* Efek hover foto */
-.profile img:hover {
-    transform: scale(1.1) rotate(5deg);
+/* Ukuran & posisi */
+.gear1 {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 8%;
+    animation-duration: 15s;
 }
 
-/* Tombol link */
-.links a {
-    display: block;
-    margin: 12px 0;
-    padding: 12px;
-    background: #2c2c54;
-    color: white;
-    text-decoration: none;
-    border-radius: 12px;
-    transition: all 0.3s ease;
+.gear2 {
+    width: 280px;
+    height: 280px;
+    bottom: 5%;
+    right: 10%;
+    animation-duration: 25s;
 }
 
-/* Efek klik hover */
-.links a:hover {
-    background: #40407a;
-    transform: scale(1.05);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+.gear3 {
+    width: 120px;
+    height: 120px;
+    top: 60%;
+    left: 45%;
+    animation-duration: 10s;
 }
 
-.links a:active {
-    transform: scale(0.95);
+/* Animasi Putar */
+@keyframes rotateGear {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
