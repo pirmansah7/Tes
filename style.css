@@ -1,138 +1,65 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-/* Background gelap */
+/* Background animasi */
 body {
+    margin: 0;
+    font-family: Arial, sans-serif;
     height: 100vh;
-    background: #0f0f0f;
+    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    color: white;
 }
 
-/* Roda Gigi */
-body::before,
-body::after {
-    content: "⚙";
-    position: absolute;
-    font-size: 120px;
-    color: rgba(0, 255, 255, 0.08);
-    animation: spin 20s linear infinite;
+/* Animasi gerak background */
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
 }
 
-/* Roda kiri atas */
-body::before {
-    top: 10%;
-    left: 10%;
-}
-
-/* Roda kanan bawah */
-body::after {
-    bottom: 10%;
-    right: 10%;
-    font-size: 160px;
-    animation: spinReverse 25s linear infinite;
-}
-
-/* Animasi berputar */
-@keyframes spin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes spinReverse {
-    from { transform: rotate(360deg); }
-    to { transform: rotate(0deg); }
-}
-
-/* Container Profil */
+/* Container */
 .container {
-    position: relative;
-    z-index: 1;
     text-align: center;
-    background: rgba(0, 0, 0, 0.8);
-    padding: 30px;
-    border-radius: 15px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 0 25px cyan;
 }
 
-/* Foto Profil */
+/* Animasi tulisan Welcome */
+.welcome-text {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    animation: fadeIn 3s ease-in-out infinite alternate;
+}
+
+/* Efek muncul hilang */
+@keyframes fadeIn {
+    from { opacity: 0.3; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(10px); }
+}
+
+/* Profile card */
 .profile img {
     width: 120px;
     border-radius: 50%;
-    border: 3px solid cyan;
-    margin-bottom: 15px;
+    border: 3px solid white;
 }
 
-/* Nama */
-.profile h1 {
-    color: white;
-}
-
-/* Deskripsi */
-.profile p {
-    color: cyan;
-    margin-bottom: 20px;
-}
-
-/* Tombol */
 .links a {
     display: block;
-    margin: 10px 0;
+    margin: 10px;
     padding: 10px;
-    text-decoration: none;
+    background: rgba(255,255,255,0.2);
     color: white;
-    background: linear-gradient(45deg, cyan, blue);
-    border-radius: 8px;
+    text-decoration: none;
+    border-radius: 10px;
     transition: 0.3s;
 }
 
-/* Hover */
 .links a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px cyan;
-}
-/* Welcome Screen */
-.welcome-screen {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(45deg, #000000, #0f2027);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999;
-    animation: fadeIn 1s ease-in-out;
-}
-
-/* Teks Welcome */
-.welcome-screen h1 {
-    color: cyan;
-    font-size: 40px;
-    animation: zoomIn 1.5s ease-in-out;
-}
-
-/* Hilang otomatis */
-.welcome-screen.hide {
-    opacity: 0;
-    visibility: hidden;
-    transition: 1s;
-}
-
-/* Animasi */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes zoomIn {
-    from { transform: scale(0.5); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+    background: white;
+    color: black;
 }
