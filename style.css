@@ -1,54 +1,112 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Tengah */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: #fdfdfd;
-  color: #222;
-  text-align: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
+/* Container Tengah */
 .container {
-  max-width: 500px;
-  margin: auto;
-  padding: 20px;
+    text-align: center;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 20px;
+    width: 320px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    animation: fadeIn 1.5s ease;
 }
 
-.title {
-  font-size: 2rem;
-  margin-bottom: 10px;
+/* Foto Profil */
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #00f2ff;
+    margin-bottom: 15px;
 }
 
-.donate-btn {
-  display: inline-block;
-  padding: 10px 20px;
-  background: #ff9800;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  margin-bottom: 20px;
+/* Nama */
+.profile h1 {
+    color: white;
+    margin-bottom: 5px;
 }
 
-.section {
-  margin-top: 20px;
+/* Deskripsi */
+.profile p {
+    color: #ccc;
+    font-size: 14px;
+    margin-bottom: 25px;
 }
 
-.section h2 {
-  margin-bottom: 10px;
-  text-decoration: underline;
+/* Tombol */
+.links a {
+    display: block;
+    text-decoration: none;
+    background: linear-gradient(45deg, #00f2ff, #0072ff);
+    color: white;
+    padding: 14px;
+    margin: 10px 0;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+/* Hover */
+.links a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00f2ff;
 }
 
-.section li {
-  margin: 6px 0;
+/* Klik Effect */
+.links a:active {
+    transform: scale(0.95);
 }
 
-.footer {
-  margin-top: 30px;
-  font-size: 0.9rem;
+/* Welcome Screen */
+.welcome-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: 1s;
+}
+
+.welcome-screen h1 {
+    color: #00f2ff;
+    font-size: 30px;
+    animation: glow 1s infinite alternate;
+}
+
+/* Hide Welcome */
+.welcome-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Animasi */
+@keyframes glow {
+    from { text-shadow: 0 0 10px #00f2ff; }
+    to { text-shadow: 0 0 25px #00f2ff; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
