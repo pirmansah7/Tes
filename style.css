@@ -99,3 +99,40 @@ body::after {
     transform: scale(1.05);
     box-shadow: 0 0 15px cyan;
 }
+/* Welcome Screen */
+.welcome-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(45deg, #000000, #0f2027);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Teks Welcome */
+.welcome-screen h1 {
+    color: cyan;
+    font-size: 40px;
+    animation: zoomIn 1.5s ease-in-out;
+}
+
+/* Hilang otomatis */
+.welcome-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    transition: 1s;
+}
+
+/* Animasi */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
