@@ -1,112 +1,66 @@
-/* Reset */
-* {
+body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Tengah */
-body {
+    overflow: hidden;
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    color: white;
+}
+
+/* Konten Tengah */
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 40vh;
+}
+
+.content h1 {
+    font-size: 40px;
+}
+
+.content p {
+    font-size: 20px;
+}
+
+/* Background Rumus */
+.math-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
 }
 
-/* Container Tengah */
-.container {
-    text-align: center;
-    background: rgba(255,255,255,0.05);
-    backdrop-filter: blur(15px);
-    padding: 40px;
-    border-radius: 20px;
-    width: 320px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.5);
-    animation: fadeIn 1.5s ease;
+/* Style Rumus */
+.math-background span {
+    position: absolute;
+    font-size: 22px;
+    color: rgba(255,255,255,0.2);
+    animation: float 10s linear infinite;
 }
 
-/* Foto Profil */
-.profile img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 4px solid #00f2ff;
-    margin-bottom: 15px;
-}
+/* Posisi Acak */
+.math-background span:nth-child(1) { left: 10%; animation-duration: 12s; }
+.math-background span:nth-child(2) { left: 25%; animation-duration: 15s; }
+.math-background span:nth-child(3) { left: 40%; animation-duration: 10s; }
+.math-background span:nth-child(4) { left: 55%; animation-duration: 18s; }
+.math-background span:nth-child(5) { left: 70%; animation-duration: 14s; }
+.math-background span:nth-child(6) { left: 85%; animation-duration: 16s; }
+.math-background span:nth-child(7) { left: 50%; animation-duration: 20s; }
 
-/* Nama */
-.profile h1 {
-    color: white;
-    margin-bottom: 5px;
-}
-
-/* Deskripsi */
-.profile p {
-    color: #ccc;
-    font-size: 14px;
-    margin-bottom: 25px;
-}
-
-/* Tombol */
-.links a {
-    display: block;
-    text-decoration: none;
-    background: linear-gradient(45deg, #00f2ff, #0072ff);
-    color: white;
-    padding: 14px;
-    margin: 10px 0;
-    border-radius: 12px;
-    font-weight: bold;
-    font-size: 16px;
-    transition: 0.3s;
-}
-
-/* Hover */
-.links a:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #00f2ff;
-}
-
-/* Klik Effect */
-.links a:active {
-    transform: scale(0.95);
-}
-
-/* Welcome Screen */
-.welcome-screen {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-    transition: 1s;
-}
-
-.welcome-screen h1 {
-    color: #00f2ff;
-    font-size: 30px;
-    animation: glow 1s infinite alternate;
-}
-
-/* Hide Welcome */
-.welcome-screen.hide {
-    opacity: 0;
-    visibility: hidden;
-}
-
-/* Animasi */
-@keyframes glow {
-    from { text-shadow: 0 0 10px #00f2ff; }
-    to { text-shadow: 0 0 25px #00f2ff; }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+/* Animasi Mengambang */
+@keyframes float {
+    0% {
+        top: 100%;
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.3;
+    }
+    100% {
+        top: -10%;
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
 }
