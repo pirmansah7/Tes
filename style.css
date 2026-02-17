@@ -1,66 +1,58 @@
-body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: white;
-}
-
-/* Konten Tengah */
-.content {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    top: 40vh;
-}
-
-.content h1 {
-    font-size: 40px;
-}
-
-.content p {
-    font-size: 20px;
-}
-
-/* Background Rumus */
-.math-background {
-    position: absolute;
+/* Background Mesin */
+.clock-background {
+    position: fixed;
     width: 100%;
     height: 100%;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
     overflow: hidden;
+    z-index: -1;
 }
 
-/* Style Rumus */
-.math-background span {
+/* Gear Style */
+.gear {
     position: absolute;
-    font-size: 22px;
-    color: rgba(255,255,255,0.2);
-    animation: float 10s linear infinite;
+    width: 150px;
+    height: 150px;
+    border: 8px solid rgba(255,255,255,0.1);
+    border-radius: 50%;
+    animation: spin 10s linear infinite;
 }
 
-/* Posisi Acak */
-.math-background span:nth-child(1) { left: 10%; animation-duration: 12s; }
-.math-background span:nth-child(2) { left: 25%; animation-duration: 15s; }
-.math-background span:nth-child(3) { left: 40%; animation-duration: 10s; }
-.math-background span:nth-child(4) { left: 55%; animation-duration: 18s; }
-.math-background span:nth-child(5) { left: 70%; animation-duration: 14s; }
-.math-background span:nth-child(6) { left: 85%; animation-duration: 16s; }
-.math-background span:nth-child(7) { left: 50%; animation-duration: 20s; }
+/* Gear Variasi */
+.gear1 {
+    top: 10%;
+    left: 15%;
+}
 
-/* Animasi Mengambang */
-@keyframes float {
-    0% {
-        top: 100%;
-        transform: translateY(0);
-        opacity: 0;
+.gear2 {
+    top: 50%;
+    left: 70%;
+    width: 200px;
+    height: 200px;
+    animation-duration: 15s;
+    animation-direction: reverse;
+}
+
+.gear3 {
+    bottom: 10%;
+    left: 40%;
+    width: 120px;
+    height: 120px;
+    animation-duration: 8s;
+}
+
+/* Animasi Putar */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
     }
-    50% {
-        opacity: 0.3;
+    to {
+        transform: rotate(360deg);
     }
-    100% {
-        top: -10%;
-        transform: translateY(-100vh);
-        opacity: 0;
-    }
+}
+
+/* Supaya konten tetap di atas */
+.container {
+    position: relative;
+    z-index: 2;
 }
