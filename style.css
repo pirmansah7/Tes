@@ -56,3 +56,46 @@
     position: relative;
     z-index: 2;
 }
+/* Rumus Matematika Background */
+.math-formula {
+    position: absolute;
+    color: rgba(255,255,255,0.15);
+    font-size: 22px;
+    font-weight: bold;
+    animation: floatMath linear infinite;
+}
+
+/* Posisi & Durasi Acak */
+.math-formula:nth-child(4) { left: 5%; animation-duration: 15s; }
+.math-formula:nth-child(5) { left: 20%; animation-duration: 18s; }
+.math-formula:nth-child(6) { left: 35%; animation-duration: 12s; }
+.math-formula:nth-child(7) { left: 50%; animation-duration: 20s; }
+.math-formula:nth-child(8) { left: 65%; animation-duration: 16s; }
+.math-formula:nth-child(9) { left: 80%; animation-duration: 14s; }
+.math-formula:nth-child(10){ left: 45%; animation-duration: 22s; }
+
+/* Animasi Melayang */
+@keyframes floatMath {
+    0% {
+        top: 100%;
+        opacity: 0;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.25;
+    }
+    100% {
+        top: -10%;
+        opacity: 0;
+        transform: translateY(-100vh);
+    }
+}
+
+/* Pastikan background tetap di belakang */
+.tech-background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
